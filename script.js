@@ -1,31 +1,16 @@
-// 1. Exploring JavaScript Objects
+let products = [
+    { name: "Laptop", price: 999.99, description: "Powerful computing on the go" },
+    { name: "Smartphone", price: 699.99, description: "Stay connected wherever you are" },
+    { name: "Headphones", price: 149.99, description: "Immersive audio experience" }
+];
 
-function Book(title, author, pages) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-}
+let productList = document.getElementById('#productList'); 
 
-
-Book.prototype.displayInformation = function() {
-    console.log(this.title, this.author, this.pages)
-};
-
-let book1 = new Book("Lord of the Rings", "Tolkien", "100-102");
-
-console.log(book1['title'], book1.author, book1.pages)
-
-library = []
-
-Book.prototype.addBook = function(book) {
-    library.push(book);
-}
-
-
-function findLongBook (book, threshold) {
-    longBooks = book.pages.filter(pages => pages >= threshold);
-    console.log(longBooks);
-}
+products.forEach(product => {
+    const listItem = document.createElement('li');
+    listItem.textContent = product;
+    productList.appendChild(listItem);
+});
 
 
 
